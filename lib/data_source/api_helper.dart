@@ -10,7 +10,6 @@ class ApiHelper {
 
   ApiHelper() {
     _dio = Dio();
-    _numberOfCreatedObjects++;
   }
 
   Future sendApiRequest({
@@ -30,8 +29,4 @@ class ApiHelper {
       return 'Error: With Requesting the Service | $urlWithEndPoint |. \n===>$e \n';
     }
   }
-
-  int _numberOfCreatedObjects = 0;
-  get printNumberOfCreatedObjects =>
-      print('Number Of Created Objects is: $_numberOfCreatedObjects');
 }
