@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:k_structure/shared/app_colors.dart';
 import 'package:k_structure/shared/app_configuration.dart';
+import 'package:k_structure/shared/app_strings.dart';
 import 'package:k_structure/view/home_layout.dart';
 import 'package:provider/provider.dart';
 
@@ -21,9 +22,7 @@ class MyApp extends StatelessWidget {
             backgroundColor: kPrimaryColor,
             appBar: AppBar(
               centerTitle: true,
-              title: Text(
-                'K Structure',
-              ),
+              title: Text(kAppName),
             ),
             // go to home layout
             body: HomeView(),
