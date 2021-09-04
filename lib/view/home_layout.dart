@@ -1,11 +1,8 @@
-import 'dart:convert';
-
 import 'package:conditional_builder/conditional_builder.dart';
 import 'package:flutter/material.dart';
-import 'package:k_structure/data_source/api_helper.dart';
 import 'package:k_structure/model/post_model.dart';
+import 'package:k_structure/repository/app_repository.dart';
 import 'package:k_structure/shared/app_colors.dart';
-import 'package:k_structure/shared/app_endpionts.dart';
 import 'package:k_structure/shared/app_widgets.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -24,13 +21,7 @@ class _HomeScreenState extends State<HomeScreen> {
   }
 
   getPosts() async {
-    String resultJSONStringContainsListOfDynamic =
-        await ApiHelper.getInstance.sendApiRequest(urlWithEndPoint: kBaseURL);
-
-    listOfPosts = List<Post>.from(
-        jsonDecode(resultJSONStringContainsListOfDynamic)
-            .map((postElement) => Post.fromJson(postElement)));
-
+    listOfPosts = await AppRepository.getInstance.getPosts();
     setState(() => isLoading = true);
   }
 
