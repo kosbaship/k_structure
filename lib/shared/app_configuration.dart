@@ -20,5 +20,7 @@ List<SingleChildWidget> independentServices = [
 
 List<SingleChildWidget> dependentServices = [
   // ProxyProvider let's you pass values
-  // from one provided model to another
+  // from one provided model to another or
+  // ProxyProvider is used here to define services
+  // that need to rely on other Providers
 ];

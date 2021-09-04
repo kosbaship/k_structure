@@ -7,7 +7,7 @@ import 'package:k_structure/viewmodels/posts_viewmodel.dart';
 
 import 'base_view.dart';
 
-class HomeScreen extends StatelessWidget {
+class HomeView extends StatelessWidget {
   @override
   Widget build(BuildContext context) => BaseView<PostsViewModel>(
       model: PostsViewModel.getInstance,

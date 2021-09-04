@@ -26,7 +26,7 @@ class MyApp extends StatelessWidget {
               ),
             ),
             // go to home layout
-            body: HomeScreen(),
+            body: HomeView(),
           ),
         ),
       );
