@@ -1,7 +1,7 @@
 import 'dart:convert';
 
 import 'package:flutter/foundation.dart';
-import 'package:k_structure/data_source/api_helper.dart';
+import 'package:k_structure/datasource/api_helper.dart';
 import 'package:k_structure/model/post_model.dart';
 import 'package:k_structure/repository/base_repository.dart';
 import 'package:k_structure/shared/app_endpoints.dart';
