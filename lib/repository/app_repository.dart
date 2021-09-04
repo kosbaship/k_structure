@@ -11,8 +11,8 @@ class AppRepository with BaseRepository {
 
   @override
   Future<List<Post>> getPosts() async {
-    String resultJSONStringContainsListOfDynamic =
-        await ApiHelper.getInstance.sendApiRequest(urlWithEndPoint: kBaseURL);
+    String resultJSONStringContainsListOfDynamic = await ApiHelper.getInstance
+        .sendApiRequest(urlWithEndPoint: kPostsService);
 
     return List<Post>.from(jsonDecode(resultJSONStringContainsListOfDynamic)
         .map((postElement) => Post.fromJson(postElement)));
