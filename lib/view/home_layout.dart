@@ -10,8 +10,8 @@ import 'base_view.dart';
 class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) => BaseView<PostsViewModel>(
-      onModelReady: (model) async => model.getPosts(),
       model: PostsViewModel.getInstance,
+      onModelReady: (model) async => model.getPosts(),
       builder: (context, model, _) => ConditionalBuilder(
             condition: model.currentState != ViewState.Busy,
             builder: (context) => ConditionalBuilder(

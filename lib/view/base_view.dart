@@ -3,11 +3,10 @@ import 'package:k_structure/viewmodels/base_viewmodel.dart';
 import 'package:provider/provider.dart';
 
 class BaseView<T extends BaseViewModel> extends StatefulWidget {
-  final Widget Function(BuildContext context, T model, Widget child) builder;
-
   final T model;
   final Widget child;
   final Function(T) onModelReady;
+  final Widget Function(BuildContext context, T model, Widget child) builder;
 
   BaseView({Key key, this.model, this.builder, this.child, this.onModelReady})
       : super(key: key);
