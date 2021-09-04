@@ -1,1 +1,10 @@
-enum ViewState { Idle, Busy }
+enum ViewState {
+  Idle,
+  Busy,
+}
+
+enum ToastColors {
+  SUCCESS,
+  ERROR,
+  WARNING,
+}

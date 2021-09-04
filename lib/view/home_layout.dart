@@ -35,9 +35,11 @@ class HomeScreen extends StatelessWidget {
                             title: "${model.listOfPosts[index].title}",
                             fontFamily: "Pacifico",
                             fontWeight: FontWeight.normal,
+                            fontSize: 10,
                           ),
                           subtitle: CustomText(
                             title: "${model.listOfPosts[index].body}",
+                            fontSize: 12,
                           ),
                         )),
                   );
