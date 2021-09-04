@@ -12,9 +12,13 @@ class AppRepository with BaseRepository {
   static AppRepository get getInstance => _instance;
 
   final ApiHelper remoteDataSource;
+  // final CacheHelper localDataSource;
+  // final NetworkInfo networkInfo;
 
   AppRepository({
     @required this.remoteDataSource,
+    // this.localDataSource,
+    // this.networkInfo,
   });
 
   @override
