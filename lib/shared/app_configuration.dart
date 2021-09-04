@@ -1,12 +1,15 @@
 import 'package:flutter/material.dart';
+import 'package:k_structure/datasource/cache_helper.dart';
 import 'package:k_structure/repository/app_repository.dart';
 import 'package:k_structure/viewmodels/posts_viewmodel.dart';
 import 'package:provider/provider.dart';
 import 'package:provider/single_child_widget.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 configureDependencies() async {
   WidgetsFlutterBinding.ensureInitialized();
   AppRepository.getInstance;
+  CacheImplementation.getInstance(await SharedPreferences.getInstance());
 }
 
 List<SingleChildWidget> providers = [
