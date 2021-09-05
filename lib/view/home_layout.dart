@@ -2,6 +2,7 @@ import 'package:conditional_builder/conditional_builder.dart';
 import 'package:flutter/material.dart';
 import 'package:k_structure/shared/app_colors.dart';
 import 'package:k_structure/shared/app_enum.dart';
+import 'package:k_structure/shared/app_helper_methods.dart';
 import 'package:k_structure/shared/app_widgets.dart';
 import 'package:k_structure/viewmodels/posts_viewmodel.dart';
 
@@ -11,7 +12,11 @@ class HomeView extends StatelessWidget {
   @override
   Widget build(BuildContext context) => BaseView<PostsViewModel>(
       model: PostsViewModel.getInstance,
-      onModelReady: (model) async => model.getPosts(),
+      onModelReady: (model) async {
+        showSnackBar(
+            context: context, massage: '${await model.getConnectionStatus()}');
+        model.getPosts();
+      },
       builder: (context, model, _) => ConditionalBuilder(
             condition: model.currentState != ViewState.Busy,
             builder: (context) => ConditionalBuilder(
