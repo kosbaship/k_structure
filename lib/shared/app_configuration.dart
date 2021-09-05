@@ -8,8 +8,8 @@ import 'package:shared_preferences/shared_preferences.dart';
 
 configureDependencies() async {
   WidgetsFlutterBinding.ensureInitialized();
+  CacheImplementation.initCacheInstance(await SharedPreferences.getInstance());
   AppRepository.getInstance;
-  CacheImplementation.getInstance(await SharedPreferences.getInstance());
 }
 
 List<SingleChildWidget> providers = [

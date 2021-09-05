@@ -14,12 +14,14 @@ abstract class CacheHelper {
 
 class CacheImplementation extends CacheHelper {
   static CacheImplementation _instance;
-  static CacheImplementation getInstance(sp) {
+  static CacheImplementation initCacheInstance(sp) {
     if (_instance == null) {
       _instance = CacheImplementation(sp);
     }
     return _instance;
   }
+
+  static CacheImplementation get getCacheInstance => _instance;
 
   final SharedPreferences _sharedPreferences;
 
